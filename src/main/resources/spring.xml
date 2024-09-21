@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- bean definitions here -->
+    <!-- You need to give your class name and an unique ID over here. -->
+
+<!--
+    <bean id="doctor" class="org.zahimuslim.Doctor">
+-->
+        <!-- We already have this property in the clsas file and we are simply just injecting this into it -->
+
+<!--
+        <property name="qualification" value="MBBS"></property>
+-->
+        <!-- Before we used a static value now we are going to use
+        ref to reference the already created object nurse which is given below.
+        now the entire nurse object will be injected into the doctor object.
+         -->
+
+       <!-- <property name="nurse" ref="nurse"></property>-->
+
+<!--
+        over here we can pass arguments to the constructor and its going to injecti it over ther.
+-->
+       <!-- <constructor-arg value="MBBS"></constructor-arg>
+
+    </bean>
+    <bean id="nurse" class="org.zahimuslim.Nurse"></bean>-->
+
+
+
+
+  <!--  annotion section starts here-->
+
+ <!--   we are telling spring to search the component over here and you shall get it-->
+    <context:component-scan base-package="org.zahimuslim"></context:component-scan>
+
+
+</beans>
