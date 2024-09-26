@@ -26,17 +26,19 @@ public class Main {
        // Nurse nurse = (Nurse) context.getBean("nurse");
         //we have created an interface called Staff, which the doc and then nurse both implements
         // now we can write thing this way.
-        Staff staff = context.getBean(Doctor.class);
+        Doctor staff = context.getBean(Doctor.class);
         // this way we have decopled the entire application.
         //staff.assist();
         // nurse.assist();
        /* Doctor doc = new Doctor();*/
         //doctor.assist();
         // Doctor docqal = context.getBean(Doctor.class);
-        System.out.println("docqal" );
+        System.out.println(staff.getQualification());
         staff.assist();
 
+
         //we shall move to annotions now, I will be commenting all the beans from the spring.xml file.
+        //everything till here was XML, the MBBS one was missed IG
 
     }
 }

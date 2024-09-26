@@ -16,7 +16,7 @@ public class Doctor implements Staff{
     this.qualification = qualification;
 }*/
     /*
-    We are going to get another property called qulalificaiton
+    We are going to get another property called qualification
     now spring doesnt know about this property and we have getters and
     setters for it, so its simply is going to put null for it.
 
@@ -34,6 +34,8 @@ e values to it we can go it from the xml file itself
      */
 
     private String qualification;
+
+
 
     public void assist()
     {
@@ -67,4 +69,21 @@ e values to it we can go it from the xml file itself
     public void setNurse(Nurse nurse) {
         this.nurse = nurse;
     }*/
+
+   // 26-09-24
+
+//   we are going to add a constructor to the doctor class and we shall inject it from spring.xml
+
+    public Doctor(String qualification) {
+        this.qualification = qualification;
+    }
+
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
 }

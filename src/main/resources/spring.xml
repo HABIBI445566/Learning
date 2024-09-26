@@ -34,6 +34,21 @@
     <bean id="nurse" class="org.zahimuslim.Nurse"></bean>-->
 
 
+<!--
+    26-09-24
+-->
+
+
+<!--
+    1) If I want to add values with constructor we an do it this way
+-->
+<!--
+
+    <bean id="doctor" class="org.zahimuslim.Doctor">
+        <constructor-arg value="MBBS"></constructor-arg>
+    </bean>
+-->
+
 
 
   <!--  annotion section starts here-->
