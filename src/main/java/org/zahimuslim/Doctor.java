@@ -6,7 +6,6 @@ import javax.print.Doc;
 
 
 //to use annotations we need to use @Component , whatever is marked with this we are telling beans that you can use it to make beans out of it.
-@Component
 public class Doctor implements Staff{
     private String qualification;
     public void assist()
@@ -14,4 +13,18 @@ public class Doctor implements Staff{
         System.out.println("Doctor is assisting");
     }
 
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "qualification='" + qualification + '\'' +
+                '}';
+    }
 }

@@ -15,7 +15,22 @@ public class Main {
 
         //over here we add the class for configuration
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
-        Staff staff = context.getBean(Doctor.class);
+        //the same way how we did in the xml configuration we can do the same thing over here
+        Doctor staff = context.getBean(Doctor.class);
         staff.assist();
+        staff.setQualification("MBBS");
+        System.out.println(staff);
+        // this proves that the default the bean is in singleton scope
+        Doctor doctor = context.getBean(Doctor.class);
+        System.out.println(doctor);
+        /*
+        * Results ->
+        *
+        * Doctor is assisting
+        Doctor{qualification='MBBS'}
+        Doctor{qualification='MBBS'}
+        *
+        *
+        * */
     }
 }
