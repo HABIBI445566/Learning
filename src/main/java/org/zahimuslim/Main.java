@@ -23,6 +23,19 @@ public class Main {
         // this proves that the default the bean is in singleton scope
         Doctor doctor = context.getBean(Doctor.class);
         System.out.println(doctor);
+        //This results where when there was no scope annotations defined for Doctor Class
+        /*
+        * Results ->
+        *
+        * Doctor is assisting
+        Doctor{qualification='MBBS'}
+        Doctor{qualification='MBBS'}
+        *
+        *
+        * */
+
+
+        //This results where when there was when Prototype annotation added to Doctor, removing the bean from the configuration and adding @Component in Doctor class
         /*
         * Results ->
         *
