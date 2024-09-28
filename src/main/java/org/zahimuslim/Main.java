@@ -19,10 +19,10 @@ public class Main {
         Doctor staff = context.getBean(Doctor.class);
         staff.assist();
         staff.setQualification("MBBS");
-        System.out.println(staff);
+       /* System.out.println(staff);
         // this proves that the default the bean is in singleton scope
         Doctor doctor = context.getBean(Doctor.class);
-        System.out.println(doctor);
+        System.out.println(doctor);*/
         /*
         * Results ->
         *

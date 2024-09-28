@@ -12,9 +12,9 @@ public class BeanConfig {
     // It scans the components in those packages and makes those objects for us
 
     //when you add this bean we are going to remove the @component annotation from the Doctor Class because we ourselves are telling which bean to load
-    @Bean
+   /* @Bean
     public Doctor doctor()
     {
           return new  Doctor();
-    }
+    }*/
 }
