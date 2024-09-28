@@ -13,7 +13,7 @@ public class Main {
        // This is the start of AOP
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
         ShoppingCart cart = context.getBean(ShoppingCart.class);
-        cart.checkout();
+        cart.checkout("Working");
 
         /*
         This was the result of trying to log,

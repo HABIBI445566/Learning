@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ShoppingCart {
-    public void checkout()
+    public void checkout(String status)
     {
         // There are few things we would do each time for a request and basic boiler code
         // Logging, Authentication, Auth, Sanitize data
