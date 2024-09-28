@@ -11,5 +11,20 @@ import javax.print.Doc;
 public class Main {
     public static void main(String[] args) {
        // This is the start of AOP
+        ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
+        ShoppingCart cart = context.getBean(ShoppingCart.class);
+        cart.checkout();
+
+        /*
+        This was the result of trying to log,
+        you get your logging as aspect thing
+        1) Get your dependency
+        2) Add annotation in BeanConfig and LoggingAspect
+        3) Run it and you will see it
+
+
+        Loggers
+Checkout Method from ShoppingCart Called
+*/
     }
 }
