@@ -26,5 +26,16 @@ public class Main {
         Loggers
 Checkout Method from ShoppingCart Called
 */
+
+        /*
+        * This is a result of Pointcuts, There is a whole class for it I am just posting the results here
+        * Authenticating the request
+Loggers
+Checkout Method from ShoppingCart Called
+After Loggers
+*
+* AuthenticationAspect is the class
+        *
+        * */
     }
 }
