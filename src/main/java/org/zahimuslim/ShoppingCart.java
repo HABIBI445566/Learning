@@ -11,4 +11,10 @@ public class ShoppingCart {
         // All these are cross cutting concerns
         System.out.println("Checkout Method from ShoppingCart Called");
     }
+
+    public int quantity(){
+        return 20;
+    }
+
+
 }

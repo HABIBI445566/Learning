@@ -14,6 +14,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
         ShoppingCart cart = context.getBean(ShoppingCart.class);
         cart.checkout("Working");
+        cart.quantity();
 
         /*
         This was the result of trying to log,
