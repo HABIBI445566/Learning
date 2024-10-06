@@ -10,6 +10,7 @@ public class SpringBootLearningApplication {
 
 		SpringApplication.run(SpringBootLearningApplication.class, args);
 		// checking git name and pushes
+		// changed global git
 	}
 
 }
