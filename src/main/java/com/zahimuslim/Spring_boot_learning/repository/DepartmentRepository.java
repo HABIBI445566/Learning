@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository // we need to pas the entity and the Id type
 public interface DepartmentRepository extends JpaRepository<Department,Long> {
+
+    //Definitely check how this is actually working
+    public Department findByDepartmentName(String departmentName);
 }
