@@ -3,6 +3,7 @@ package com.zahimuslim.Spring_boot_learning.controller;
 import com.zahimuslim.Spring_boot_learning.entity.Department;
 import com.zahimuslim.Spring_boot_learning.service.DepartmentService;
 import com.zahimuslim.Spring_boot_learning.service.DepartmentServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class DepartmentController {
 
 
     @PostMapping("/departments") // telling spring to convert the request to Department object
-    public Department saveDepartment(@RequestBody Department department)
+    public Department saveDepartment( @Valid @RequestBody Department department)
     {
         return departmentService.saveDepartment(department);
     }
