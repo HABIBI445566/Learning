@@ -1,12 +1,14 @@
 package com.zahimuslim.Spring_boot_learning.service;
 
 import com.zahimuslim.Spring_boot_learning.entity.Department;
+import com.zahimuslim.Spring_boot_learning.error.DepartmentNotFoundException;
 import com.zahimuslim.Spring_boot_learning.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
@@ -25,8 +27,15 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department getDepartmentById(Long id) {
-        return departmentRepository.findById(id).orElse(null);    }
+    public Department getDepartmentById(Long id) throws DepartmentNotFoundException {
+        Optional<Department> department =  departmentRepository.findById(id);
+        if(!department.isPresent())
+        {
+            throw new DepartmentNotFoundException("Department Not Availabe");
+        }
+
+        return department.get();
+    }
 
     @Override
     public void deleteDepartmentById(Long id) {
