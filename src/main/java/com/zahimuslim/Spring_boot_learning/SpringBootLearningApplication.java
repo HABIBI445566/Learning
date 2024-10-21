@@ -8,6 +8,7 @@ public class SpringBootLearningApplication {
 
 	public static void main(String[] args) {
 
+		//connecting it to MYSQL
 		SpringApplication.run(SpringBootLearningApplication.class, args);
 
 	}
