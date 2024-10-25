@@ -8,7 +8,7 @@ public class SpringBootLearningApplication {
 
 	public static void main(String[] args) {
 
-		//start of Spring Data JPA
+		//Will remove everything and beginning of the new project
 		SpringApplication.run(SpringBootLearningApplication.class, args);
 
 	}
