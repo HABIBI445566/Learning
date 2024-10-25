@@ -8,7 +8,7 @@ public class SpringBootLearningApplication {
 
 	public static void main(String[] args) {
 
-		//start of Testing
+		//start of Spring Data JPA
 		SpringApplication.run(SpringBootLearningApplication.class, args);
 
 	}
