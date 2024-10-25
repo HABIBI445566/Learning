@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 //this by default will be a component and also tells that this will always return a response body
 @RestController
+@RequestMapping("/test")
 public class HelloController {
 
-    @Value("${welcome.message}")
-    private String welcomeMessage;
 
+    @Value(("${sp}"))
+    private String name;
 
     //we are telling what will be the end point, when you put localhost/ it will hit this and the method type is GET
     //@RequestMapping(value = "/", method = RequestMethod.GET)
     //By this we can simply get the end point / and we know its a get method
-    @GetMapping("/")
+    @GetMapping("/message")
     public String helloworld()
     {
         //over here this is hardcoded, suppose if we wanted something from the properties file we could do something like this
-        return welcomeMessage;
+        return "Checking with other profiles";
         //There is a way to run the applicaiton as we are building it without stopping and rerunning each time, check about the registry
     }
     /*
