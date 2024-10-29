@@ -14,7 +14,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 // we had already run the program without the below annotation, and it built, we got all the fields that we want in the Table when we opened work bench, now we will be running the application by adding The below annotation and we see that this created a new Table
-@Table(name = "tbl_student")
+@Table(
+        name = "tbl_student",
+//check this
+uniqueConstraints = @UniqueConstraint(
+        name = "email_id_unique",
+        columnNames = "email_address"
+))
 public class Student {
 
     @Id
@@ -29,7 +35,8 @@ public class Student {
     private String firstName;
     private String lastNme;
     //this will say how our column should be named if we want
-    //@Column(name = "email_address")
+    @Column(name = "email_address",
+    nullable = false)
     private String emailId;
     private String guardianName;
     private String guardianEmail;
