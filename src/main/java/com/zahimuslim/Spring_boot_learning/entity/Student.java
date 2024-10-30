@@ -1,4 +1,4 @@
-package com.zahimuslim.Spring_boot_learning;
+package com.zahimuslim.Spring_boot_learning.entity;
 
 
 import jakarta.persistence.*;
@@ -33,13 +33,13 @@ public class Student {
     )
     private long studentId;
     private String firstName;
-    private String lastNme;
+    private String lastName;
     //this will say how our column should be named if we want
     @Column(name = "email_address",
     nullable = false)
     private String emailId;
-    private String guardianName;
-    private String guardianEmail;
-    private String guardianMobile;
+
+    @Embedded
+    private Guardian guardian;
 
 }
