@@ -32,7 +32,9 @@ public class CourseMaterial {
    @OneToOne(
            //ask about this later
            cascade = CascadeType.ALL,
-           fetch = FetchType.LAZY
+           fetch = FetchType.LAZY,
+           //we were able to create a course without defining the course material till now, now that we have optional false, this wont be possible
+           optional = false
    )
    @JoinColumn(
            name = "course_id",

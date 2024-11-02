@@ -22,15 +22,15 @@ class CourseMaterialRepositoryTest {
     public void SaveCourseMaterial()
     {
         Course course = Course.builder()
-                .title("DSA")
+                .title("new")
                 .credit(7)
                 .build();
 
 
         CourseMaterial courseMaterial =
                 CourseMaterial.builder()
-                        .url("www.google.com")
-                        .course(course)
+                        .url("www.new.com")
+                      //  .course(course)
                         .build();
 
         repository.save(courseMaterial);
