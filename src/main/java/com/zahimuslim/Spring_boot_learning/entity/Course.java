@@ -34,6 +34,16 @@ public class Course {
     )
     private CourseMaterial courseMaterial;
 
+    // this way there wont be any change in the DB
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    private Teacher teacher;
+
 
 }
 

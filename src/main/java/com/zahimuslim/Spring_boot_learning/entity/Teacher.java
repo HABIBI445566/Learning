@@ -29,7 +29,9 @@ public class Teacher {
     private String firstName;
     private String lastName;
 
-    @OneToMany(
+
+    // it said that we have to go to ManyToOne relationship wherever possible rather than OnetoMany relationship
+   /* @OneToMany(
             cascade = CascadeType.ALL
     )
 
@@ -37,5 +39,5 @@ public class Teacher {
             name = "teacher_id",
             referencedColumnName = "teacherId"
     )
-    private List<Course> courses;
+    private List<Course> courses;*/
 }
