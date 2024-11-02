@@ -4,15 +4,12 @@ import com.zahimuslim.Spring_boot_learning.entity.Guardian;
 import com.zahimuslim.Spring_boot_learning.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-//@DataJpaTest // we shouldnt really test repository  with @SpringBootTest we are should use @DataJpaTest for it since we want your DB to be impacted and not flushed after the use we are using the @SpringBootTest
+//@DataJpaTest // we shouldn't really test repository  with @SpringBootTest we are should use @DataJpaTest for it since we want your DB to be impacted and not flushed after the use we are using the @SpringBootTest
 class StudentRepositoryTest {
 
     @Autowired
