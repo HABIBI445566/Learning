@@ -42,4 +42,8 @@ public class Student {
     @Embedded
     private Guardian guardian;
 
+
+
+    //we are about to add many to many relationship,
+    // over here, if we see that, the Student and course will have that, we will have a separate table altogether for this, where we have course and student
 }

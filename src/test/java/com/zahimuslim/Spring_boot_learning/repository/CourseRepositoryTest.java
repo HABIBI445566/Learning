@@ -1,6 +1,7 @@
 package com.zahimuslim.Spring_boot_learning.repository;
 
 import com.zahimuslim.Spring_boot_learning.entity.Course;
+import com.zahimuslim.Spring_boot_learning.entity.Student;
 import com.zahimuslim.Spring_boot_learning.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,6 +119,40 @@ courses -->[Course(courseId=1, title=Python, credit=8, courseMaterial=null, teac
 
         System.out.println("courses -->"+courses);
 
+    }
+
+
+
+
+    //this might seem a little difficult to understand
+    @Test
+    public void saveCourseWithStudentAndTeacher()
+    {
+
+        //we created a teacher object
+        Teacher teacher = Teacher.builder()
+                .firstName("Lizzie")
+                .lastName("Morgan")
+                .build();
+        //This is a course Object, where we are giving Teacher now we know that This course is Taught by this teacher
+        Course course = Course
+                .builder()
+                .title("AI")
+                .credit(12)
+                .teacher(teacher)
+                .build();
+// we have this student object with us
+        Student student = Student.builder()
+                .firstName("Habib")
+                .lastName("Idhar")
+                .emailId("abhisheikh@gmail.com")
+                .build();
+// we add this student object into a variable in the student Object class, now we have a list of students in a course object
+        // now we have a course object with a list of students who take them
+        course.addStudents(student);
+        //we are going to save the course which contain the list of students and the teacher who teaches them into the course table
+        // then its simply going to match and then we have a new table where everything is mapped!!
+        courseRepository.save(course);
     }
 
 
