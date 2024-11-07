@@ -5,6 +5,8 @@ import com.zahimuslim.Spring_boot_learning.entity.User;
 import com.zahimuslim.Spring_boot_learning.event.RegistrationCompleteEvent;
 import com.zahimuslim.Spring_boot_learning.model.UserModel;
 import com.zahimuslim.Spring_boot_learning.service.UserService;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
@@ -23,13 +25,18 @@ public class RegistrationContoller {
     private ApplicationEventPublisher publisher;
 
     @PostMapping("/register")
-    public String registerUser(@RequestBody UserModel userModel)
+    public String registerUser(@RequestBody UserModel userModel, final HttpServletRequest request)
     {
         User user = userService.registerUser(userModel);
         publisher.publishEvent(new RegistrationCompleteEvent(user,
-                "url"));
+                applicationUrl(request)));
         return "Success";
 
+    }
+
+    private String applicationUrl(HttpServletRequest request)
+    {
+        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
     }
 
 }
